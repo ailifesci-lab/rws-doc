@@ -2,8 +2,16 @@ name: Deploy Docusaurus Site
 
 on:
   push:
-    branches:
-      - main  # default branch
+    branches: [ "main" ]
+
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:  # Allows you to run this workflow manually from the Actions tab
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
