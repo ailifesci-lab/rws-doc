@@ -17,7 +17,8 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/intro-cn" style={{margin: '0 10px'}}>QPod使用指引 - 3min ⏱️</Link>
+          <Link className="button button--secondary button--lg" to="/docs/intro-cn" style={{margin: '0 10px'}}>使用指引 - 3min ⏱️</Link>
+          <Link className="button button--secondary button--lg" to="/docs/intro-en" style={{margin: '0 10px'}}>Quick Start - 3min ⏱️</Link>
         </div>
 
       </div>
@@ -30,7 +31,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`RWS Cloud Platform`}
-      description="One-stop AI and Data Platform for Medical and Clinical Researchers.">
+      description="One-stop AI and Data Science Platform.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

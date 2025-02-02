@@ -2,31 +2,35 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const github_org = 'ailifesci-lab';
+const github_repo = 'rws-doc';
+const github_dir = 'rws-doc';
+const name_brand = 'Ai LifeSci';
+
 const config: Config = {
   title: 'RWS Cloud Platform',
-  tagline: 'One-stop AI and Data Platform for Medical and Clinical Researchers',
+  tagline: 'One-stop AI and Data Science Platform',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://qpod.github.io',
+  url: 'https://doc.ailifesci.cn',
+
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'ailifesci-lab', // Usually your GitHub org/user name.
-  projectName: 'qpod.github.io', // Usually your repo name.
+  // GitHub pages deployment config. If you aren't using GitHub pages, you don't need these.
+  organizationName: `${github_org}`, // Usually your GitHub org/user name.
+  projectName: `${github_repo}`, // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // Even if you don't use internationalization, you can use this field to set useful metadata like html lang.
+  // For example, if your site is Chinese, you may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['en', 'zh-Hans'],
   },
 
   presets: [
@@ -35,17 +39,13 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-          'https://github.com/QPod/QPod.github.io/tree/main/QPod/',
+          // Please change this to your repo. Remove this to remove the "edit this page" links.
+          editUrl: `https://github.com/${github_org}/${github_repo}/tree/main/${github_dir}/`,
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/QPod/QPod.github.io/tree/main/QPod/',
+          // Please change this to your repo. Remove this to remove the "edit this page" links.
+          editUrl: `https://github.com/${github_org}/${github_repo}/tree/main/${github_dir}/`,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -58,11 +58,8 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'QPod',
-      logo: {
-        alt: 'QPod Logo',
-        src: 'img/logo.svg',
-      },
+      title: `${name_brand}`,
+      logo: { alt: 'Logo', src: 'img/logo.svg', },
       items: [
         {
           type: 'docSidebar',
@@ -72,7 +69,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/QPod/',
+          href: `https://github.com/${github_org}/`,
           label: 'GitHub',
           position: 'right',
         },
@@ -95,7 +92,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub Discussion',
-              href: 'https://github.com/QPod/docker-images/discussions',
+              href: `https://github.com/${github_org}/${github_repo}/discussions`,
             },
             {
               label: 'Discord',
@@ -116,12 +113,12 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/QPod',
+              href: `https://github.com/${github_org}`,
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} QPod.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ${name_brand}.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -1,6 +1,6 @@
 {
-  "name": "q-pod",
-  "version": "0.0.0",
+  "name": "doc",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
